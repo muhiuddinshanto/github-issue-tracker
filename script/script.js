@@ -138,7 +138,28 @@ const priorityClass =
 
 
 
+allBtn.addEventListener('click', () => {
+    allIssueDisplay(allIssues);
+    allBtn.classList.add('btn-primary')
+    openBtn.classList.remove('btn-primary')
+    closedBtn.classList.remove('btn-primary')
+});
 
+openBtn.addEventListener('click', () => {
+    allIssueDisplay(allIssues.filter(issue => issue.status === "open"));
+    openBtn.classList.add('btn-primary')
+    allBtn.classList.remove('btn-primary')
+    closedBtn.classList.remove('btn-primary')
+
+});
+
+closedBtn.addEventListener('click', () => {
+    allIssueDisplay(allIssues.filter(issue => issue.status === "closed"));
+    closedBtn.classList.add('btn-primary')
+    openBtn.classList.remove('btn-primary')
+    allBtn.classList.remove('btn-primary')
+
+});
 
 
 

@@ -214,6 +214,19 @@ const modalStatus = data.status === "open"
 }
 
 
+document.getElementById('btn-search').addEventListener("click", function(){
+    const input = document.getElementById('input-search')
+    const searchValue = input.value.trim().toLowerCase();
+
+    fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchValue}`)
+    .then((res)=> res.json())
+    .then((data)=> {
+        allIssueDisplay(data.data)
+        
+    }
+    )
+    
+})
 
 
 

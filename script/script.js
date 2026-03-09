@@ -24,7 +24,11 @@ function getLabelImage(label){
     return "";
 }
 
-
+function getLabelClassModal(label){
+    if(label.toLowerCase() === "high") return "badge badge-soft badge-error";          
+    if(label.toLowerCase() === "medium") return "badge badge-soft badge-warning";  
+    return "badge badge-soft badge-success"; 
+}
 
 
 async  function allIssueLoad (){

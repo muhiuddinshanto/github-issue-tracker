@@ -46,10 +46,10 @@
                 <div class="join">
                     <div>
                         <label class="input validator join-item">
-                            <i class="fa-brands fa-sistrix"></i> <input id="input-search" type="text" placeholder='Search issues...'
-                                required />
+                            <i class="fa-brands fa-sistrix"></i> <input id="input-search" type="text"
+                                placeholder='Search issues...' required />
                         </label>
-                       
+
                     </div>
                     <button id="btn-search" class="btn btn-neutral join-item">New Issue</button>
                 </div>
@@ -66,7 +66,8 @@
     </section>
 
 
-     
+
+
 
     <main class="mt-4 w-11/12 mx-auto ">
         <div>
@@ -95,36 +96,38 @@
         </div>
 
 
+       
 
         <div id="all-issue-section" class="bg-[#fffafa] pb-8">
-            <div id="card-section" class="card-section grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-3 p-6 ">
-
-
-
+            <div id="card-section"
+                class="card-section grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-3 p-6 ">
             </div>
 
         </div>
+         <section id="spinner" class="flex justify-center items-center py-1 hidden">
+            <span class="loading loading-dots loading-xl"></span>
+        </section>
 
-   
+
 
 
     </main>
 
-    
-        <!-- Open the modal using ID.showModal() method -->
-        
-        <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
-            <div  class="modal-box">
-                <div id="modal-add"></div>
-                <div class="modal-action">
-                    <form method="dialog">
-                        <!-- if there is a button in form, it will close the modal -->
-                        <button class="btn btn-primary">Close</button>
-                    </form>
-                </div>
+
+    <!-- Open the modal using ID.showModal() method -->
+
+    <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
+            <div id="modal-add"></div>
+            <div class="modal-action">
+                <form method="dialog">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button class="btn btn-primary">Close</button>
+                </form>
             </div>
-        </dialog>
-    
+        </div>
+    </dialog>
+
     <script src="script/script.js"></script>
 </body>
 

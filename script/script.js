@@ -31,7 +31,19 @@ function getLabelClassModal(label){
 }
 
 
+function manageSpinner (status) {
+    if(status === true){
+        document.getElementById('spinner').classList.remove('hidden')
+        document.getElementById('card-section').classList.add('hidden')
+    }else{
+        document.getElementById('spinner').classList.add('hidden')
+        document.getElementById('card-section').classList.remove('hidden')
+    }
+}
+
 async  function allIssueLoad (){
+
+    manageSpinner(true);
 
    await fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues')
    .then ((res)=>  res.json())
@@ -121,6 +133,7 @@ const priorityClass =
 
                     </div>
  `
+ manageSpinner(false);
  cardSection.appendChild(card)
 
  issuCount.innerText = cardSection.children.length
@@ -137,6 +150,7 @@ const priorityClass =
 
 
 const loadModal = async(id) => {
+    manageSpinner(true);
     my_modal_5.showModal() 
   const url = `https://phi-lab-server.vercel.app/api/v1/lab/issue/${id}`
  await  fetch(url)
@@ -168,6 +182,7 @@ const loadModal = async(id) => {
 */
 
 function showModal(data) {
+    manageSpinner(false);
    const modalAdd = document.getElementById('modal-add');
    console.log(data);
 
@@ -233,14 +248,18 @@ document.getElementById('btn-search').addEventListener("click", function(){
 
 allBtn.addEventListener('click', () => {
     allIssueDisplay(allIssues);
+    manageSpinner(true);
     allBtn.classList.add('btn-primary')
+    manageSpinner(false);
     openBtn.classList.remove('btn-primary')
     closedBtn.classList.remove('btn-primary')
 });
 
 openBtn.addEventListener('click', () => {
     allIssueDisplay(allIssues.filter(issue => issue.status === "open"));
+    manageSpinner(true);
     openBtn.classList.add('btn-primary')
+    manageSpinner(false);
     allBtn.classList.remove('btn-primary')
     closedBtn.classList.remove('btn-primary')
 
@@ -248,7 +267,9 @@ openBtn.addEventListener('click', () => {
 
 closedBtn.addEventListener('click', () => {
     allIssueDisplay(allIssues.filter(issue => issue.status === "closed"));
+    manageSpinner(true);
     closedBtn.classList.add('btn-primary')
+    manageSpinner(false);
     openBtn.classList.remove('btn-primary')
     allBtn.classList.remove('btn-primary')
 
